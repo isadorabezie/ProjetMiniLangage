@@ -254,5 +254,7 @@ void destroy_statement(const e_statement_type type, u_statement *statement) {
 void destroy_ast(t_ast *prog) {
     if (prog == NULL)
         return;
-    // TODO
+    t_ast * next = prog->next;
+    destroy_statement(prog->command, &prog->statement);
+    destroy_ast(next);
 }

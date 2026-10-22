@@ -16,10 +16,22 @@ bool run_aux(int var_value[], const t_ast *prog) {
         case Return: {
             // prog->command == Return, so we assume that the statement has type t_return_statement
             t_return_statement st = prog->statement.return_st;
-            // TODO
-            return false; // TODO
+            int val = eval_rpn(var_value, &st.expr);
+            printf("-> %d\n", val);
+            return true;
         }
-            // TODO
+        case Assignment: {
+
+        }
+        case If: {
+
+        }
+        case While: {
+
+        }
+        case Print: {
+
+        }
         default:
             break;
     }
@@ -28,6 +40,5 @@ bool run_aux(int var_value[], const t_ast *prog) {
 }
 
 void run(t_ast *prog) {
-
     // TODO
 }
